@@ -1,0 +1,22 @@
+<div class="stats shadow shadow-accent-content flex justify-self-center">
+  <div class="stat place-items-center">
+    <div class="stat-title text-primary-content">Unique Visitors</div>
+    <div class="stat-value text-primary-content"><%= stats.visitors %></div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title text-primary-content">Total Visits</div>
+    <div class="stat-value text-primary-content"><%= stats.visits %></div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title text-primary-content">Total Pageviews</div>
+    <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
+  </div>
+  <div class="stat place-items-center text-primary-content">
+    <div class="stat-title text-primary-content">Visit Duration</div>
+    <div class="stat-value text-primary-content">
+      <%= formatSeconds( stats.visitDuration ) %>
+    </div>
+  </div>
+</div>
