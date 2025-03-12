@@ -1,22 +1,89 @@
-<div class="stats shadow shadow-accent-content flex justify-self-center">
-  <div class="stat place-items-center">
-    <div class="stat-title text-primary-content">Unique Visitors</div>
-    <div class="stat-value text-primary-content"><%= stats.visitors %></div>
-  </div>
+<h5 class="mt-5 text-accent text-center">
+  Last 7 days<svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="inline-block h-8 w-8 stroke-current"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13 10V3L4 14h7v7l9-11h-7z"
+    ></path>
+  </svg>
+</h5>
 
-  <div class="stat place-items-center">
-    <div class="stat-title text-primary-content">Total Visits</div>
-    <div class="stat-value text-primary-content"><%= stats.visits %></div>
-  </div>
-
-  <div class="stat place-items-center">
-    <div class="stat-title text-primary-content">Total Pageviews</div>
-    <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
-  </div>
-  <div class="stat place-items-center text-primary-content">
-    <div class="stat-title text-primary-content">Visit Duration</div>
-    <div class="stat-value text-primary-content">
-      <%= formatSeconds( stats.visitDuration ) %>
+<div
+  class="flex justify-self-center text-accent text-3xl mb-5 sm:mb-1 text-base-400 font-semibold"
+>
+  <div
+    class="grid grid-cols-2 lg:grid-cols-4 w-full max-w-4xl text-center gap-0 shadow-xl"
+  >
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Unique Visitors</div>
+      <div class="stat-value text-primary-content"><%= stats.visitors %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Total Visits</div>
+      <div class="stat-value text-primary-content"><%= stats.visits %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Total Pageviews</div>
+      <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Visit Duration</div>
+      <div class="stat-value text-primary-content">
+        <%= formatSeconds( stats.visitDuration ) %>
+      </div>
     </div>
   </div>
 </div>
+<h5 class="mt-5 text-accent text-center">
+  All time<svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="inline-block h-8 w-8 stroke-current"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    ></path>
+  </svg>
+</h5>
+<div
+  class="flex justify-self-center text-accent text-3xl mb-5 sm:mb-1 text-base-400 font-semibold"
+>
+  <div
+    class="grid grid-cols-2 lg:grid-cols-4 w-full max-w-4xl text-center gap-0 shadow-xl"
+  >
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Unique Visitors</div>
+      <div class="stat-value text-primary-content"><%= stats.visitors %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Total Visits</div>
+      <div class="stat-value text-primary-content"><%= stats.visits %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Total Pageviews</div>
+      <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
+    </div>
+    <div class="stat bg-base-300 shadow-sm">
+      <div class="stat-title text-primary-content">Visit Duration</div>
+      <div class="stat-value text-primary-content">
+        <%= formatSeconds( stats.visitDuration ) %>
+      </div>
+    </div>
+  </div>
+</div>
+<h4 class="text-info text-balance mb-5 text-center">
+  <em
+    >Page stats powered by
+    <a class="link" href="https://plausible.io">Plausible</a></em
+  >
+</h4>
