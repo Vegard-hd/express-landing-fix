@@ -11,12 +11,12 @@
         </h1>
       </section>
 
-      <section><%- include('./partials/hero.ejs') %></section>
       <section>
-        <h2 class="text-center text-4xl text-info-content font-medium">Site analytics</h2>
+        <%- include('./partials/hero.ejs') %>
+      </section>
+      <section>
         <%- include('./partials/siteTracker.ejs', {stats: stats, formatSeconds: formatSeconds}) %>
-  
-    </section>
+      </section>
   </main>
     <%- include('./partials/footer.ejs') %>
   </body>
