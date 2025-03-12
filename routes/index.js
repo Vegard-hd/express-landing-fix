@@ -1,7 +1,24 @@
 const express = require("express");
 const router = express.Router();
-
+require("dotenv").config();
 const axios = require("axios").default;
+const { LRUCache } = require("lru-cache");
+const options = {
+  max: 1,
+
+  // for use with tracking overall storage size
+
+  // how long to live in ms
+  ttl: 30000,
+
+  // return stale items before removing from cache?
+  allowStale: false,
+
+  updateAgeOnGet: false,
+  updateAgeOnHas: false,
+};
+
+const cache = new LRUCache(options);
 
 const requestData = {
   site_id: "vegardhaglund.dev",
@@ -10,32 +27,7 @@ const requestData = {
   // filters: [["is_not", "visit:country_name", [""]]],
   // dimensions: ["visit:country_name", "visit:city_name"],
 };
-const key = "n2oLoogFTlcd1wQuNSn73ClXndcpEaeVaE2dxiD5vOsmXd5mxkD4vB7_mFE3cD3m";
-
-// router.get("/stats", async function (req, res, next) {
-//   try {
-//     const { data } = await axios.post(
-//       "https://required.vegardhaglund.dev/api/v2/query",
-//       requestData,
-//       {
-//         headers: {
-//           setContentType: "application/json",
-//           Authorization: "Bearer " + key,
-//         },
-//       },
-//     );
-//     console.log("response is ", data?.results[0]?.metrics[0]);
-//     res.render("stats", {
-//       visitors: data?.results[0]?.metrics[0] ?? 0,
-//       visits: data?.results[0]?.metrics[1] ?? 0,
-//       pageviews: data?.results[0]?.metrics[2] ?? 0,
-//       visitDuration: data?.results[0]?.metrics[3] ?? 0,
-//     });
-//   } catch (e) {
-//     console.warn(e);
-//     res.status(500).send("Error occurred");
-//   }
-// });
+const key = process.env.PLAUSIBLE_KEY;
 
 function formatSeconds(seconds = 10000) {
   let remaindingMinutes = 0;
@@ -77,7 +69,13 @@ async function getStats() {
 }
 
 router.get("/", async function (req, res, next) {
-  const stats = await getStats();
+  let stats = cache.get("latest");
+  console.log("iscached is ", stats);
+  if (!stats) {
+    stats = await getStats();
+    cache.set("latest", stats);
+    console.log("API data from cache used");
+  }
   res.render("index", { stats: stats, formatSeconds: formatSeconds });
 });
 
