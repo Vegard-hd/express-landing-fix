@@ -22,20 +22,26 @@
   >
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Unique Visitors</div>
-      <div class="stat-value text-primary-content"><%= stats.visitors %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.lastWeek?.visitors %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Total Visits</div>
-      <div class="stat-value text-primary-content"><%= stats.visits %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.lastWeek?.visits %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Total Pageviews</div>
-      <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.lastWeek?.pageviews %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Visit Duration</div>
       <div class="stat-value text-primary-content">
-        <%= formatSeconds( stats.visitDuration ) %>
+        <%= formatSeconds( stats?.lastWeek?.visitDuration ) %>
       </div>
     </div>
   </div>
@@ -63,20 +69,26 @@
   >
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Unique Visitors</div>
-      <div class="stat-value text-primary-content"><%= stats.visitors %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.allTime.visitors %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Total Visits</div>
-      <div class="stat-value text-primary-content"><%= stats.visits %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.allTime.visits %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Total Pageviews</div>
-      <div class="stat-value text-primary-content"><%= stats.pageviews %></div>
+      <div class="stat-value text-primary-content">
+        <%= stats?.allTime.pageviews %>
+      </div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
       <div class="stat-title text-primary-content">Visit Duration</div>
       <div class="stat-value text-primary-content">
-        <%= formatSeconds( stats.visitDuration ) %>
+        <%= formatSeconds( stats?.allTime.visitDuration ) %>
       </div>
     </div>
   </div>
