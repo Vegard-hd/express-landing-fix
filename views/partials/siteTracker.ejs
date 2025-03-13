@@ -1,99 +1,95 @@
 <h2
-  class="flex justify-self-center text-primary text-4xl mt-25 mb-5 sm:mb-1 font-bold"
+  class="flex justify-self-center text-primary text-4xl mt-25 md:mb-8 sm:mb-3 font-bold"
 >
-  Site analytics
-</h2>
-
-<h5 class="mt-5 text-accent text-center">
-  Last 7 days<svg
+  Site analytics &nbsp;
+  <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    class="inline-block h-8 w-8 stroke-current"
+    height="48px"
+    viewBox="0 -960 960 960"
+    width="48px"
+    fill="currentColor"
   >
     <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M13 10V3L4 14h7v7l9-11h-7z"
-    ></path>
+      d="m89-412-49-36 193-310 125 146 165-268 125 186 143-226 48 35-190 301-124-184-159 258-125-146L89-412Zm494 192q48 0 82.5-33.5T700-335q0-49-34-83t-83-34q-48 0-81.5 34.5T468-335q0 48 33.5 81.5T583-220ZM797-80 685-192q-22 15-47.5 23.5T583-160q-73 0-124-51t-51-124q0-73 51-125t124-52q74 0 125.5 51.5T760-335q0 29-8.5 54.5T727-233l112 111-42 42Z"
+    />
+  </svg>
+</h2>
+
+<h5 class="mt-5 text-secondary flex justify-self-center">
+  Last 7 days &nbsp;<svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 -960 960 960"
+    width="24px"
+    fill="currentColor"
+  >
+    <path
+      d="M480-522q72 0 122-50t50-122v-126H308v126q0 72 50 122t122 50ZM160-80v-60h88v-127q0-71 40-129t106-84q-66-27-106-85t-40-129v-126h-88v-60h640v60h-88v126q0 71-40 129t-106 85q66 26 106 84t40 129v127h88v60H160Z"
+    />
   </svg>
 </h5>
 
 <div
-  class="flex justify-self-center text-accent text-3xl mb-5 sm:mb-1 text-base-400 font-semibold"
+  class="flex justify-self-center text-secondary text-3xl mb-5 sm:mb-1 text-base-400 font-semibold"
 >
   <div
     class="grid grid-cols-2 lg:grid-cols-4 w-full max-w-4xl text-center gap-0 shadow-xl"
   >
     <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Unique Visitors</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.lastWeek?.visitors %>
-      </div>
+      <div class="stat-title">Unique Visitors</div>
+      <div class="stat-value"><%= stats?.lastWeek?.visitors %></div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Total Visits</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.lastWeek?.visits %>
-      </div>
+      <div class="stat-title">Total Visits</div>
+      <div class="stat-value"><%= stats?.lastWeek?.visits %></div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Total Pageviews</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.lastWeek?.pageviews %>
-      </div>
+      <div class="stat-title">Total Pageviews</div>
+      <div class="stat-value"><%= stats?.lastWeek?.pageviews %></div>
     </div>
     <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Visit Duration</div>
-      <div class="stat-value text-primary-content">
+      <div class="stat-title">Visit Duration</div>
+      <div class="stat-value">
         <%= formatSeconds( stats?.lastWeek?.visitDuration ) %>
       </div>
     </div>
   </div>
 </div>
-<h5 class="mt-5 text-accent text-center">
-  All time<svg
+<h5 class="mt-5 text-secondary text-center flex justify-self-center">
+  All time &nbsp;
+  <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    class="inline-block h-8 w-8 stroke-current"
+    height="24px"
+    viewBox="0 -960 960 960"
+    width="24px"
+    fill="currentColor"
   >
     <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-    ></path>
+      d="M306-394q-17 0-28.5-11.5T266-434q0-17 11.5-28.5T306-474q17 0 28.5 11.5T346-434q0 17-11.5 28.5T306-394Zm177 0q-17 0-28.5-11.5T443-434q0-17 11.5-28.5T483-474q17 0 28.5 11.5T523-434q0 17-11.5 28.5T483-394Zm170 0q-17 0-28.5-11.5T613-434q0-17 11.5-28.5T653-474q17 0 28.5 11.5T693-434q0 17-11.5 28.5T653-394ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"
+    />
   </svg>
 </h5>
 <div
-  class="flex justify-self-center text-accent text-3xl mb-5 sm:mb-1 text-base-400 font-semibold"
+  class="flex justify-self-center text-3xl mb-5 sm:mb-1 text-base-400 font-semibold text-secondary"
 >
   <div
     class="grid grid-cols-2 lg:grid-cols-4 w-full max-w-4xl text-center gap-0 shadow-xl"
   >
-    <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Unique Visitors</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.allTime.visitors %>
-      </div>
+    <div class="stat bg-base-300 shadow-sm text-secondary">
+      <div class="stat-title">Unique Visitors</div>
+      <div class="stat-value"><%= stats?.allTime.visitors %></div>
     </div>
-    <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Total Visits</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.allTime.visits %>
-      </div>
+    <div class="stat bg-base-300 shadow-sm text-secondary">
+      <div class="stat-title">Total Visits</div>
+      <div class="stat-value"><%= stats?.allTime.visits %></div>
     </div>
-    <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Total Pageviews</div>
-      <div class="stat-value text-primary-content">
-        <%= stats?.allTime.pageviews %>
-      </div>
+    <div class="stat bg-base-300 shadow-sm text-secondary">
+      <div class="stat-title">Total Pageviews</div>
+      <div class="stat-value"><%= stats?.allTime.pageviews %></div>
     </div>
-    <div class="stat bg-base-300 shadow-sm">
-      <div class="stat-title text-primary-content">Visit Duration</div>
-      <div class="stat-value text-primary-content">
+    <div class="stat bg-base-300 shadow-sm text-secondary">
+      <div class="stat-title">Visit Duration</div>
+      <div class="stat-value">
         <%= formatSeconds( stats?.allTime.visitDuration ) %>
       </div>
     </div>
@@ -101,7 +97,7 @@
 </div>
 <h4 class="text-info text-balance mb-5 text-center">
   <em
-    >Page stats powered by
-    <a class="link" href="https://plausible.io">Plausible</a></em
+    >Analytics powered by
+    <a class="link" href="https://plausible.io">Plausible.io</a></em
   >
 </h4>
