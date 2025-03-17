@@ -1,21 +1,12 @@
-# Use the official Node.js image based on Alpine
-FROM node:22.9.0
-
-# Set the working directory
+FROM node:alpine
 WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
+# COPY tailwind.config.js ./
 RUN npm install
-
-# Copy the rest of the application code (including src/ and public/)
-COPY . .
-
-# Run the Tailwind build step after copying files
-# Expose the port the app runs on
+COPY bin/ ./bin/          
+COPY src/ ./src/        
+COPY app.js ./            
+COPY . .                  
+# RUN npm run build
 EXPOSE 3001
-
-# Command to run the application
-CMD ["node", "/bin/www"]
+CMD ["node", "bin/www"]
