@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": "false",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "lint": "prettier --write .",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css --watch"
   },
