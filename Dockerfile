@@ -10,9 +10,10 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the application code (including src/ and public/)
 COPY . .
 
+# Run the Tailwind build step after copying files
 RUN npm run build
 
 # Expose the port the app runs on
