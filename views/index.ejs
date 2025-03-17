@@ -24,14 +24,12 @@
 
 
 <script>
+  let hasScrolled = false;
+
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    console.log(`Current scroll position: ${scrollPosition}`);
-    
-    // Example: Change header opacity based on scroll position
-    const header = document.querySelector('h1');
-    if (header) {
-      header.style.opacity = Math.max(1 - scrollPosition / 300, 0);
+    if (!hasScrolled) {
+      plausible("scroll");
+      hasScrolled = true;
     }
   });
 </script>
