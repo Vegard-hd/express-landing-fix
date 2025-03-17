@@ -56,7 +56,7 @@ async function getStats() {
       await getApiData(requestData7days),
     ]);
     // @ts-ignore
-    console.log(data);
+    data;
     const newData = {
       allTime: {
         // @ts-ignore
@@ -94,11 +94,9 @@ module.exports = {
   async isCached(req, res, next) {
     try {
       let stats = cache.get("latest");
-      console.log("iscached is ", stats);
       if (!stats) {
         stats = await getStats();
         cache.set("latest", stats);
-        console.log("API data from cache used");
       }
       req.cache = stats;
       next();

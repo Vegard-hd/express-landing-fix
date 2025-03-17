@@ -21,3 +21,12 @@
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>
+
+<script>
+  window.addEventListener('scroll', function() {
+    if (!window.scrollExecuted) {
+      plausible('scroll');
+      window.scrollExecuted = true;
+    }
+  });
+</script>
