@@ -9,6 +9,7 @@
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
     "axios": "^1.8.2",
     "bootstrap": "^5.3.3",
     "compression": "^1.8.0",
@@ -24,7 +25,8 @@
     "lru-cache": "^11.0.2",
     "morgan": "~1.9.1",
     "mysql2": "^3.11.3",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
