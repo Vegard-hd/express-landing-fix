@@ -2,12 +2,11 @@
   "name": "express-landing-fix",
   "version": "1.0.1",
   "private": "false",
-  "type": "module",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www && npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css --watch",
     "lint": "prettier --write .",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css"
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/stylesheets/output.css"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
@@ -27,7 +26,7 @@
     "morgan": "~1.9.1",
     "mysql2": "^3.11.3",
     "sequelize": "^6.37.5",
-    "tailwindcss": "^4.0.12"
+    "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
