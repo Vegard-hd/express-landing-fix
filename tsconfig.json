@@ -3,8 +3,9 @@
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
-
-    "noEmit": true
+    "moduleResolution": "node16",
+    "noEmit": true,
+    "module": "Node16"
   },
   "include": ["**/*.js"]
 }
