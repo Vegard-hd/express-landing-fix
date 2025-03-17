@@ -10,8 +10,10 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+RUN npm build
 # Copy the rest of the application code
 COPY . .
+
 
 # Expose the port the app runs on
 EXPOSE 3001
