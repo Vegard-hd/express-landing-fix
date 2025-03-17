@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3001
 
 # Command to run the application
-CMD ["node", "app.js"]
+CMD ["node", "/bin/www"]
