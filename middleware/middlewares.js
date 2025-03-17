@@ -1,4 +1,5 @@
-// const { LRUCache } = require("lru-cache");
+const { LRUCache } = require("lru-cache");
+require("dotenv").config();
 const options = {
   max: 1,
 
@@ -89,7 +90,7 @@ async function getStats() {
   });
 }
 
-/* module.exports = {
+module.exports = {
   // @ts-ignore
   async isCached(req, res, next) {
     try {
@@ -104,4 +105,4 @@ async function getStats() {
       next(error);
     }
   },
-}; */
+};

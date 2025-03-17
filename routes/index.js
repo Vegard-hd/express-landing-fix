@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { isCached } = require("../middleware/middlewares");
 require("dotenv").config();
 // const { isCached } = require("../middleware/middlewares");
 
@@ -27,7 +28,7 @@ router.get("/stats", async function (req, res, next) {
   }
 });
 
-router.get("/", async function (req, res, next) {
+router.get("/", isCached, async function (req, res, next) {
   try {
     // @ts-ignore
     const stats = req.cache;

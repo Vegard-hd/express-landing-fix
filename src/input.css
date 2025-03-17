@@ -16,9 +16,6 @@
     "opsz" 40;
 }
 
-@theme {
-  --color-clifford: #da373d;
-}
 @plugin "daisyui/theme" {
   name: "nord";
   default: true;
