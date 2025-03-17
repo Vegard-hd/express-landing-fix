@@ -1,4 +1,4 @@
-const { LRUCache } = require("lru-cache");
+// const { LRUCache } = require("lru-cache");
 const options = {
   max: 1,
 
@@ -89,7 +89,7 @@ async function getStats() {
   });
 }
 
-module.exports = {
+/* module.exports = {
   // @ts-ignore
   async isCached(req, res, next) {
     try {
@@ -104,4 +104,4 @@ module.exports = {
       next(error);
     }
   },
-};
+}; */

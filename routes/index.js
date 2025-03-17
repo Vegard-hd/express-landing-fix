@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 require("dotenv").config();
-const { isCached } = require("../middleware/middlewares");
+// const { isCached } = require("../middleware/middlewares");
 
 function formatSeconds(seconds = 10000) {
   let remaindingMinutes = 0;
@@ -17,7 +17,7 @@ function formatSeconds(seconds = 10000) {
   return `${hour}h ${minutes}m ${remainder}s`;
 }
 
-router.get("/stats", isCached, async function (req, res, next) {
+router.get("/stats", async function (req, res, next) {
   try {
     // @ts-ignore
     const stats = req.cache;
@@ -27,7 +27,7 @@ router.get("/stats", isCached, async function (req, res, next) {
   }
 });
 
-router.get("/", isCached, async function (req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
     // @ts-ignore
     const stats = req.cache;

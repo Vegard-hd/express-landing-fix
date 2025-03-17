@@ -3,8 +3,9 @@
 /**
  * Module dependencies.
  */
-
+console.log("www called");
 var app = require("../app");
+console.log("www called");
 var debug = require("debug")("express-template:server");
 var http = require("http");
 require("dotenv").config();
