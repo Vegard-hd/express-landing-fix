@@ -8,7 +8,7 @@ const { rateLimit } = require("express-rate-limit");
 require("dotenv").config();
 const app = express();
 
-/* const limiter = rateLimit({
+const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
   standardHeaders: "draft-8", // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
@@ -23,7 +23,7 @@ app.use(
   compression({
     level: 8,
   }),
-); */
+);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
