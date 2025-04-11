@@ -1,56 +1,51 @@
 <h2
   class="flex justify-self-center text-primary text-4xl mt-25 mb-5 sm:mb-1 font-bold"
+  id="projects"
 >
   My Projects:
 </h2>
+
 <div
-  class="flex w-full flex-col items-center justify-center md:h-96 sm:h-auto mb-20"
+  class="flex-col bg-info text-info-content max-w-1/2 rounded-xs justify-around justify-self-center mt-20 p-5 shadow-xl content-baseline"
 >
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-6xl min-h-72">
-    <div class="card card-side bg-base-300 shadow-sm">
-      <figure>
+  <h3 class="text-center text-4xl pb-2 font-semibold">
+    Exileplanet.xyz
+    <div class="avatar">
+      <div class="mask mask-hexagon w-20">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie"
+          src="https://exileplanet.xyz/img/icons/android-chrome-192x192.png"
         />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Testing webhooks JSON edit</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Watch</button>
-        </div>
       </div>
     </div>
-    <div class="card card-side bg-base-300 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie"
-        />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Watch</button>
-        </div>
-      </div>
-    </div>
-    <div class="card card-side bg-base-300 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie"
-        />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Watch</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  </h3>
+
+  <p class="text-center text-2xl">
+    My Path of Exile 2 fansite is a labor of love, powered by Node.js and
+    Express to deliver sleek EJS HTML pages styled with TailwindCSS and DaisyUI.
+    <br />
+    The <b>/upload</b> endpoint transforms images into <b>.webp</b> format
+    before tucking them away as blobs in a MySQL database—keeping things fast
+    and efficient.
+    <br />
+    With the <b>/create</b> endpoint, authenticated users can craft new posts,
+    stored in a MySQL table with titles and content neatly packed as JSON data.
+  </p>
+
+  <a
+    href="https://exileplanet.xyz"
+    class="btn btn-primary btn-wide mt-5 text-xl shadow-md"
+  >
+    Check it out here
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="currentColor"
+    >
+      <path
+        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+      />
+    </svg>
+  </a>
 </div>

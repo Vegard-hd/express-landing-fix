@@ -4,18 +4,17 @@
   <body >
     <main>
       <%- include('./partials/landing.ejs') %>
-      <%- include('./partials/projects.ejs') %>
-      <%- include('./partials/technologies.ejs') %>
       <%- include('./partials/siteTracker.ejs', {stats: stats, formatSeconds: formatSeconds}) %>
   </main>
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>
 
+
 <script>
   let hasScrolled = false;
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     if (!hasScrolled) {
       plausible("scroll");
       hasScrolled = true;
