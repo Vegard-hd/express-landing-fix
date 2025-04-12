@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { isCached } = require("../middleware/middlewares");
+const { isCached, getProjectData } = require("../middleware/middlewares");
 require("dotenv").config();
-
-function formatSeconds(seconds = 10000) {
+function formatSeconds(seconds) {
   let remaindingMinutes = 0;
   let hour = 0;
   const remainder = seconds % 60;
@@ -27,11 +26,18 @@ router.get("/stats", isCached, async function (req, res, next) {
   }
 });
 
-router.get("/", isCached, async function (req, res, next) {
+router.get("/", isCached, getProjectData, async function (req, res, next) {
   try {
     // @ts-ignore
+    console.log(req.projects);
+    // @ts-ignore
     const stats = req.cache;
-    res.render("index", { stats: stats, formatSeconds: formatSeconds });
+    res.render("index", {
+      stats: stats,
+      formatSeconds: formatSeconds,
+      // @ts-ignore
+      projects: req?.projects ?? [],
+    });
   } catch (error) {
     next(error);
   }

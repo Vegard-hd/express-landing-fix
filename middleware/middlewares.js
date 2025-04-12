@@ -1,7 +1,7 @@
 const { LRUCache } = require("lru-cache");
 require("dotenv").config();
 const options = {
-  max: 1,
+  max: 10,
 
   // for use with tracking overall storage size
 
@@ -41,7 +41,7 @@ async function getStats() {
     return await new Promise(async (resolve, reject) => {
       const getApiData = async (queryOptions) => {
         const { data } = await axios.post(
-          "https://required.vegardhaglund.website/api/v2/query",
+          process.env.PLAUSIBLE_URL,
           queryOptions,
           {
             headers: {
@@ -58,7 +58,6 @@ async function getStats() {
         await getApiData(requestData7days),
       ]);
       // @ts-ignore
-      data;
       const newData = {
         allTime: {
           // @ts-ignore
@@ -90,9 +89,7 @@ async function getStats() {
       resolve(newData);
     });
   } catch (error) {
-    console.error(
-      "Something wring with API request to plausible 'https://required.vegardhaglund.website/api/v2/query'",
-    );
+    console.error("Something wring with API request to plausible API");
   }
 }
 
@@ -106,6 +103,24 @@ module.exports = {
         cache.set("latest", stats);
       }
       req.cache = stats;
+      next();
+    } catch (error) {
+      next(error);
+    }
+  },
+  async getProjectData(req, res, next) {
+    try {
+      let projects = cache.get("projects");
+      if (!projects) {
+        const { readFileSync } = require("fs");
+        projects = JSON.parse(
+          readFileSync("./projects.json", {
+            encoding: "utf-8",
+          }),
+        );
+        cache.set("projects", projects, { ttl: 1000 * 60 * 60 * 60 });
+      }
+      req.projects = projects;
       next();
     } catch (error) {
       next(error);

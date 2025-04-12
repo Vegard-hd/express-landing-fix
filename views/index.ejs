@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="nord">
+<html lang="en" data-theme="corporate">
   <%- include('./partials/head.ejs') %>
   <body >
-    <main>
+    <main class="bg-base-200 ">
       <%- include('./partials/landing.ejs') %>
-      <%- include('./partials/projects.ejs') %>
+      <%- include('./partials/projects.ejs', {projects: projects}) %>
       <%- include('./partials/technologies.ejs') %>
       <%- include('./partials/siteTracker.ejs', {stats: stats, formatSeconds: formatSeconds}) %>
   </main>
