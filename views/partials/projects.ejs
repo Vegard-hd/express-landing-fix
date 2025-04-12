@@ -26,18 +26,18 @@
         </div>
       </div>
 
-      <h3 class="mt-2 mb-3 text-center text-3xl font-semibold">
+      <h3 class="mt-2 mb-3 text-center text-3xl font-bold">
         <%= e.title %>
       </h3>
 
-      <p class="text-center text-lg">
+      <p class="text-center text-balance text-2xl font-medium">
         <%= e.brief %>
       </p>
 
-      <ul class="mt-4 list-inside list-disc">
+      <ul class="mt-4 list-inside list-disc ">
         <% e.bulletPoints.forEach(b => { %>
          
-            <li> <%= b %></li>
+            <li class="text-balance text-xl pb-3 "> <%= b %></li>
         <% }) %>
 
       </ul>
