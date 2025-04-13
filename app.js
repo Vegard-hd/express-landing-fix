@@ -4,6 +4,7 @@ const path = require("path");
 const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const compression = require("compression");
+const cookieParser = require("cookie-parser");
 const { rateLimit } = require("express-rate-limit");
 require("dotenv").config();
 const app = express();
@@ -18,6 +19,31 @@ const limiter = rateLimit({
 
 // Apply the rate limiting middleware to all requests.
 app.use(limiter);
+
+app.use(cookieParser());
+app.use(function (req, res, next) {
+  const cookies = req.cookies;
+  // let darkmode = cookies?.darkmode === "1" ? true : false;
+  let darkmode;
+  if (cookies.darkmode === "1") {
+    darkmode = true;
+  } else {
+    // Check for the prefers-color-scheme header
+    if (req.headers["sec-ch-prefers-color-scheme"] === "dark") {
+      darkmode = true;
+    } else if (req.headers["sec-ch-prefers-color-scheme"] === "light") {
+      darkmode = false;
+    }
+  }
+  if (!darkmode) darkmode = false;
+  // If the user has a preference in their browser settings, use that.
+  // Note: This header is not supported by all browsers yet.
+  // You might want to combine this with a client-side solution for broader compatibility.
+  console.log(darkmode);
+  // @ts-ignore
+  req.darkmode = darkmode;
+  next();
+});
 
 app.use(
   compression({

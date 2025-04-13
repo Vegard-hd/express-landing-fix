@@ -36,6 +36,8 @@ router.get("/", isCached, getProjectData, async function (req, res, next) {
       stats: stats,
       formatSeconds: formatSeconds,
       // @ts-ignore
+      darkmode: req.darkmode,
+      // @ts-ignore
       projects: req?.projects ?? [],
     });
   } catch (error) {

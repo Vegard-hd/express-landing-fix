@@ -4,7 +4,8 @@
   "private": "false",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css --watch",
+    "dev": "nodemon ./bin/www",
+    "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css --watch",
     "lint": "prettier --write .",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css"
   },
