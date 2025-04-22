@@ -3,9 +3,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-COPY bin/ ./bin/          
-COPY src/ ./src/        
-COPY app.js ./            
+RUN npm build
+
 COPY . .                  
 RUN npm run build
 EXPOSE 3001

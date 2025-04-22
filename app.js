@@ -39,7 +39,6 @@ app.use(function (req, res, next) {
   // If the user has a preference in their browser settings, use that.
   // Note: This header is not supported by all browsers yet.
   // You might want to combine this with a client-side solution for broader compatibility.
-  console.log(darkmode);
   // @ts-ignore
   req.darkmode = darkmode;
   next();
