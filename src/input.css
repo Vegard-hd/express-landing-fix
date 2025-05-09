@@ -16,6 +16,10 @@
     "opsz" 40;
 }
 
+svg {
+  cursor: pointer;
+}
+
 @plugin "daisyui/theme" {
   name: "corporate";
   default: true;

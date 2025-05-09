@@ -29,7 +29,6 @@ router.get("/stats", isCached, async function (req, res, next) {
 router.get("/", isCached, getProjectData, async function (req, res, next) {
   try {
     // @ts-ignore
-    console.log(req.projects);
     // @ts-ignore
     const stats = req.cache;
     res.render("index", {
