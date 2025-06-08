@@ -33,8 +33,8 @@
     const moonTarget = document.getElementById("moonSvg");
     const sunTarget = document.getElementById("sunSvg");
     const target = document.getElementsByTagName("html")[0];
-    if (target.getAttribute("data-theme") === "corporate") {
-      target.setAttribute("data-theme", "dracula");
+    if (target.getAttribute("data-theme") === "wireframe") {
+      target.setAttribute("data-theme", "synthwave");
       moonTarget.classList.toggle("invisible");
       sunTarget.classList.toggle("invisible");
 
@@ -43,7 +43,7 @@
       moonTarget.classList.toggle("invisible");
       sunTarget.classList.toggle("invisible");
       document.cookie = "darkmode=0; SameSite=lax;";
-      target.setAttribute("data-theme", "corporate");
+      target.setAttribute("data-theme", "wireframe");
     }
   }
 </script>
