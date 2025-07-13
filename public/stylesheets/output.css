@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -1141,9 +1141,6 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
-  }
   .hero-content {
     isolation: isolate;
     display: flex;
@@ -1317,6 +1314,11 @@
       background-color: color-mix(in oklab, var(--color-neutral) 50%, transparent);
     }
   }
+  .drawer-content {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    min-width: calc(0.25rem * 0);
+  }
   .stat-value {
     grid-column-start: 1;
     white-space: nowrap;
@@ -1391,9 +1393,6 @@
   }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
-  }
-  .mt-10 {
-    margin-top: calc(var(--spacing) * 10);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -1620,6 +1619,9 @@
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
+  .max-w-12 {
+    max-width: calc(var(--spacing) * 12);
+  }
   .max-w-96 {
     max-width: calc(var(--spacing) * 96);
   }
@@ -1708,6 +1710,11 @@
   }
   .justify-self-center {
     justify-self: center;
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .overflow-x-hidden {
     overflow-x: hidden;
@@ -1831,6 +1838,10 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  }
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -1867,6 +1878,9 @@
   }
   .text-wrap {
     text-wrap: wrap;
+  }
+  .text-clip {
+    text-overflow: clip;
   }
   .text-accent {
     color: var(--color-accent);
@@ -1950,6 +1964,10 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
   .btn-md {
     --fontsize: 0.875rem;
