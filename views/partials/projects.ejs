@@ -13,13 +13,13 @@
     >
     <% projects.forEach(e => { %>
     <div
-      class="bg-primary text-primary-content mx-auto mt-20 max-w-96  rounded-2xl   shadow-2xl p-5 shadow-2xl"
+      class="bg-primary text-primary-content mx-auto mt-20 max-w-96  rounded-2xl p-5 shadow-2xl"
     >
       <div class="flex justify-center">
         <div class="avatar">
           <div class="mask mask-hexagon w-24">
             <img
-              alt="Big favicon for my Exileplanet project"
+              alt="Big favicon for my <%= e.title %> project"
               src="<%= e.img %>"
             />
           </div>
@@ -27,7 +27,8 @@
       </div>
 
       <h3 class="mt-2 mb-3 text-center text-3xl font-bold">
-        <%= e.title %>
+        <a class="link  link-hover" href="<%= e.title %>"><%= e.title %></a>
+        
       </h3>
 
       <p class="text-center text-pretty text-2xl font-medium">
@@ -45,7 +46,7 @@
       <!-- Call-to-Action Button with Aligned Icon -->
       <a
         href=" <%= e.siteLink %>"
-        class="btn btn-neutral hover:btn-primary btn-wide mt-4 flex items-center justify-center text-xl"
+        class="btn btn-neutral hover:btn-primary btn-wide mt-4 flex items-center justify-center text-xl   "
       >
         Check it out here
         <svg

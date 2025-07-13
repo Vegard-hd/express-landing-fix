@@ -24,15 +24,15 @@
     ]
   },
   {
-    "title": "Exileplanet.xyz",
-    "brief": "A blog platform for seamless content creation and management",
-    "img": "https://exileplanet.xyz/img/icons/android-chrome-192x192.png",
-    "siteLink": "https://exileplanet.xyz",
+    "title": "outdoorworkoutgenerator.app",
+    "brief": "An intuitive app for designing and generating personalized cycling and running workouts.",
+    "img": "https://outdoorworkoutgenerator.app/android-chrome-192x192.png",
+    "siteLink": "https://outdoorworkoutgenerator.app/",
     "bulletPoints": [
-      "Built with Node.js and Express for a robust backend",
-      "Utilizes MySQL with JSON for flexible post storage",
-      "Images stored as BLOBs for efficient handling",
-      "Advanced tag indexing for quick searches"
+      "Built with preact frontend using vite and daisyUI.",
+      "Express.js framework used to host the preact frontend and API.",
+      "Uses Gemini AI to generate workouts.",
+      "Self hosted Pocketbase database that stores "
     ]
   }
 ]
